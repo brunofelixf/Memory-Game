@@ -25,7 +25,19 @@ function checkForMatch() {
 
   unflipCards()
 }
+//função que desabilita as cartas
+function disableCards() {
+  firstCard.removeEventListener('click', flipCard)
+  secondCard.removeEventListener('click', flipCard)
+}
 
+//funcão que desvira as cartas
+function unflipCards() {
+  setTimeout(() => {
+    firstCard.classList.remove('flip')
+    secondCard.classList.remove('flip')
+  }, 1500)
+}
 cards.forEach(card => {
   card.addEventListener('click', flipCard)
 })
